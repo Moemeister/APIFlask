@@ -1,0 +1,1 @@
+pip install flask flask-sqlalchemy virtualenv flask-marshmallow marshmallow-sqlalchemy python-decouple psycopg2 psycopg2-binary python-dotenv

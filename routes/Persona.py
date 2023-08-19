@@ -5,7 +5,7 @@ from models.entities.Persona import Persona, db
 
 main = Blueprint('persona_blueprint', __name__)
 
-@main.route('/')
+@main.route('/obtenerTodos')
 def get_personas():
     try:
         persona = Persona.query.all()
@@ -13,7 +13,6 @@ def get_personas():
 
 
     except Exception as ex:
-        print(ex)
         return jsonify({'message': str(ex)}), 500
 
 @main.route('/one/<int:id>', methods=['GET']) 
@@ -45,7 +44,7 @@ def delete_persona(id):
         abort(404)
     db.session.delete(persona)
     db.session.commit()
-    return jsonify({'result': True})
+    return jsonify({'result': 'Se borro la persona'})
 
 @main.route('/update/<int:id>', methods=['PUT'])
 def update_persona(id):
