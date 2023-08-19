@@ -1,0 +1,2 @@
+SECRET_KEY=secret-key
+DB_URI=postgresql://postgres:postgres@localhost:5432/prueba
